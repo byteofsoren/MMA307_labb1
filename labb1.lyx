@@ -1,0 +1,649 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrreprt
+\begin_preamble
+\usepackage[table]{xcolor}
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Labb1
+\end_layout
+
+\begin_layout Date
+20160921
+\end_layout
+
+\begin_layout Author
+Magnus Sörensen and Natnael Zekiewos
+\end_layout
+
+\begin_layout Section
+Part1
+\end_layout
+
+\begin_layout Subsection
+Objectives 
+\end_layout
+
+\begin_layout Standard
+Objective of this part is to implement a numerical method in MATHLAB.
+ 
+\end_layout
+
+\begin_layout Subsection
+details
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ can be written like 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:f(x)1"
+
+\end_inset
+
+ and like the Honer's method 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:f(x)Honer"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f(x)=6x^{5}+5x^{4}+4x^{3}+3x^{2}+2x\label{eq:f(x)1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P_{b}(x)=x(2+x(3+x(4+x(5+6x))))\label{eq:f(x)Honer}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Code
+\end_layout
+
+\begin_layout Standard
+The native version of the polynomial is written like this in MATLAB.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "native_polynomial_calc.m"
+lstparams "language=Matlab"
+
+\end_inset
+
+And the execution of 
+\begin_inset Formula $x=-\pi$
+\end_inset
+
+ gives the result.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Matlab"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>> native_polynomial_calc(-pi)
+\end_layout
+
+\begin_layout Plain Layout
+
+ans =
+\end_layout
+
+\begin_layout Plain Layout
+
+    -1.449772132366787e+03 
+\end_layout
+
+\end_inset
+
+The Honer's version of the polynomial is written like this in MATLAB.
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "Honer_polynomial_calc.m"
+lstparams "language=Matlab"
+
+\end_inset
+
+And the output of 
+\begin_inset Formula $x=-\pi$
+\end_inset
+
+ gives the result.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Matlab"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>> Honer_polynomial_calc(-pi)
+\end_layout
+
+\begin_layout Plain Layout
+
+ans =
+\end_layout
+
+\begin_layout Plain Layout
+
+    -1.449772132366787e+03 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Time consumption
+\end_layout
+
+\begin_layout Standard
+The time consumption reported by the script.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Naivemethod: 
+\end_layout
+
+\begin_layout Plain Layout
+
+Elapsed time is 1.329380 seconds.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Horner smethod: 
+\end_layout
+
+\begin_layout Plain Layout
+
+Elapsed time is 0.343049 seconds.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Why honer's function is faster.
+\end_layout
+
+\begin_layout Standard
+The difference in time is do to the number of calculations the computer
+ needed to calculate the equation the result is stated in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Calculations-needed"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{d}(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of calculations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Calculations needed
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Calculations-needed"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Part2
+\end_layout
+
+\begin_layout Standard
+Prof that sires 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eris_of_fx"
+
+\end_inset
+
+ is the CDD derivative when 
+\begin_inset Formula $k=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f'(x)\approx\begin{array}{c}
+2k\\
+\sum\\
+i=0\\
+i\neq k
+\end{array}\left(f(x-(k-i)h)\frac{(-1)^{k+i}(k!)^{2}}{(k-i)i!(2k-i)!h}\right)\label{eq:eris_of_fx}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=f(x-h)*\frac{-1}{2h}+f(x+h)*\frac{1}{2*h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{-f(x-h)}{2h}+\frac{f(x+h)}{2*h}=\frac{f(x+h)-f(x-h)}{2h}\qquad\clubsuit
+\]
+
+\end_inset
+
+For the case when 
+\begin_inset Formula $k=2$
+\end_inset
+
+ you get the flowing expansion of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eris_of_fx"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x-(2-0)h)\frac{(-1)^{2+0}(2!)^{2}}{(2-0)*0!*(2*2-0)!*h}+f(x-(2-1)h)\frac{(-1)^{2+1}(2!)^{2}}{(2-1)*1!*(2*2-1)!*h}
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
++f(x-(2-3)h)\frac{(-1)^{2+3}(2!)^{2}}{(2-3)*3!*(2*2-3)!*h}+f(x-(2-4)h)\frac{(-1)^{2+4}(2!)^{2}}{(2-4)*4!*(2*2-4)!*h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Rightarrow f(x-2h)\frac{4}{48h}+f(x-h)\frac{-4}{6h}+f(x+h)\frac{4}{-6h}+f(x+2h)\frac{4}{48h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{f(x-2h)+f(x+2h)}{12h}+\frac{2*(f(x+h)-f(x-h))}{3*h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+code.
+\end_layout
+
+\begin_layout Standard
+The code we written is a general solution for al values of 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "deriv.m"
+lstparams "language=Matlab"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Plot of the log error.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename plot_error.svg
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+plot of error when 
+\begin_inset Formula $k=1$
+\end_inset
+
+ and 
+\begin_inset Formula $k=2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+The figure above shows the error.
+\end_layout
+
+\end_body
+\end_document
