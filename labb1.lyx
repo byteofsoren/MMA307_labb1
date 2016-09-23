@@ -267,7 +267,9 @@ Time consumption
 \end_layout
 
 \begin_layout Standard
-The time consumption reported by the script.
+The time consumption reported by the script provided in the aberrational
+ instructions.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -308,145 +310,12 @@ Why honer's function is faster.
 
 \begin_layout Standard
 The difference in time is do to the number of calculations the computer
- needed to calculate the equation the result is stated in 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "tab:Calculations-needed"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $f(x)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $p_{d}(x)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Number of calculations
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $20$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $10$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Calculations needed
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Calculations-needed"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+ needed to calculate the equations.
+ In the native version of the equations the computer required 20 calculations
+ while in the Honer version the computer only reacquired 10 calculations
+ to derive the correct answers.
+ Also take in consideration that the error the computer makes while doing
+ those 10 extra steps.
 \end_layout
 
 \begin_layout Section
@@ -454,18 +323,34 @@ Part2
 \end_layout
 
 \begin_layout Standard
-Prof that sires 
+The derivative in a point of an equation that is continuous in that point
+ can be approximated with the central dividing derivative (CDD).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{cdd}'(x)\approx\begin{array}{c}
+lim\\
+h\rightarrow0
+\end{array}\frac{f(x+h)-f(x-h)}{2*h}\label{eq:Df_cdd}
+\end{equation}
+
+\end_inset
+
+That limit can be acquired by expanding the series 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:eris_of_fx"
 
 \end_inset
 
- is the CDD derivative when 
+ around 
 \begin_inset Formula $k=1$
 \end_inset
 
 .
+ Prof.
 \end_layout
 
 \begin_layout Standard
@@ -485,6 +370,47 @@ i\neq k
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.3pt"
+separation "1pt"
+shadowsize "2pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Proof for exansion of 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:eris_of_fx"
+
+\end_inset
+
+ around 
+\begin_inset Formula $k=1$
+\end_inset
+
+ is 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:Df_cdd"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 =f(x-h)*\frac{-1}{2h}+f(x+h)*\frac{1}{2*h}
@@ -495,7 +421,7 @@ i\neq k
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 =\frac{-f(x-h)}{2h}+\frac{f(x+h)}{2*h}=\frac{f(x+h)-f(x-h)}{2h}\qquad\clubsuit
@@ -503,11 +429,36 @@ i\neq k
 
 \end_inset
 
-For the case when 
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+break
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+For a even more precise central dividing derivative we set 
 \begin_inset Formula $k=2$
 \end_inset
 
- you get the flowing expansion of 
+ and get the flowing expansion of 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:eris_of_fx"
@@ -563,7 +514,8 @@ code.
 \end_layout
 
 \begin_layout Standard
-The code we written is a general solution for al values of 
+The code written in the listing is using a for loop to generate the general
+ solution for al values of 
 \begin_inset Formula $k$
 \end_inset
 
@@ -620,12 +572,19 @@ centering
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-plot of error when 
+plot of the error of derivative when 
 \begin_inset Formula $k=1$
 \end_inset
 
  and 
-\begin_inset Formula $k=2$
+\begin_inset Formula $cos(x)$
+\end_inset
+
+ as a reference 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plot-of-error"
+
 \end_inset
 
 
@@ -636,13 +595,54 @@ plot of error when
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
-\end_layout
+The figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:plot-of-error"
 
 \end_inset
 
-The figure above shows the error.
+ shows the error for the error for both 
+\begin_inset Formula $cos(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{d}{dx}sin(x)$
+\end_inset
+
+ where a strait line is the most wanted result.
+ The knee at 
+\begin_inset Formula $-7$
+\end_inset
+
+ for 
+\begin_inset Formula $\frac{d}{dx}sin(x)$
+\end_inset
+
+ is do to the computer in ability to calculate small numbers.
+ So for the 
+\begin_inset Formula $\frac{d}{dx}sin(x)$
+\end_inset
+
+ our p value lined by doted lines in the graph have a value around 
+\begin_inset Formula $p\approx4$
+\end_inset
+
+.
+ Code to draw that figure.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "plot_error.m"
+lstparams "language=Matlab"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
