@@ -608,7 +608,7 @@ centering
 
 \begin_inset Graphics
 	filename plot_error.svg
-	lyxscale 80
+	lyxscale 30
 	scale 30
 
 \end_inset
