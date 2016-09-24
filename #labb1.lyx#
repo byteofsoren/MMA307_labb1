@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass scrreprt
+\textclass scrartcl
 \begin_preamble
 \usepackage[table]{xcolor}
 \usepackage{listings}
@@ -103,11 +103,15 @@
 \begin_body
 
 \begin_layout Title
+MMA307
+\end_layout
+
+\begin_layout Subtitle
 Labb1
 \end_layout
 
 \begin_layout Date
-20160921
+20160924
 \end_layout
 
 \begin_layout Author
@@ -123,8 +127,9 @@ Objectives
 \end_layout
 
 \begin_layout Standard
-Objective of this part is to implement a numerical method in MATHLAB.
- 
+Objective of this part is to implement two versions of the same numerical
+ method in MATHLAB and lock at the difference in time it takes to calculate
+ equation.
 \end_layout
 
 \begin_layout Subsection
@@ -179,6 +184,17 @@ P_{b}(x)=x(2+x(3+x(4+x(5+6x))))\label{eq:f(x)Honer}
 Code
 \end_layout
 
+\begin_layout Subsubsection
+Native code
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Native-code"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 The native version of the polynomial is written like this in MATLAB.
 \end_layout
@@ -221,6 +237,21 @@ ans =
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsubsection
+Honer optimized code
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Honer-optimized-code"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The Honer's version of the polynomial is written like this in MATLAB.
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
@@ -233,7 +264,14 @@ And the output of
 \begin_inset Formula $x=-\pi$
 \end_inset
 
- gives the result.
+ gives the result with is same as 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:Native-code"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -267,8 +305,8 @@ Time consumption
 \end_layout
 
 \begin_layout Standard
-The time consumption reported by the script provided in the aberrational
- instructions.
+The time consumption reported by the script provided in the laboratory instructi
+ons.
  
 \end_layout
 
@@ -304,7 +342,7 @@ Elapsed time is 0.343049 seconds.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Why honer's function is faster.
 \end_layout
 
@@ -320,6 +358,15 @@ The difference in time is do to the number of calculations the computer
 
 \begin_layout Section
 Part2
+\end_layout
+
+\begin_layout Subsection
+Objective
+\end_layout
+
+\begin_layout Standard
+in this part we will investigate the formulae for numerical differentiation
+ 
 \end_layout
 
 \begin_layout Standard
@@ -350,7 +397,6 @@ reference "eq:eris_of_fx"
 \end_inset
 
 .
- Prof.
 \end_layout
 
 \begin_layout Standard
@@ -389,7 +435,7 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-Proof for exansion of 
+Proof for expansion of 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "eq:eris_of_fx"
@@ -413,7 +459,12 @@ reference "eq:Df_cdd"
 \begin_layout Plain Layout
 \begin_inset Formula 
 \[
-=f(x-h)*\frac{-1}{2h}+f(x+h)*\frac{1}{2*h}
+f'(x)\approx\begin{array}{c}
+2k\\
+\sum\\
+i=0\\
+i\neq k
+\end{array}\left(f(x-(k-i)h)\frac{(-1)^{k+i}(k!)^{2}}{(k-i)i!(2k-i)!h}\right)=f(x-h)*\frac{-1}{2h}+f(x+h)*\frac{1}{2*h}
 \]
 
 \end_inset
@@ -572,11 +623,15 @@ centering
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-plot of the error of derivative and 
+plot of the error of derivative when 
 \begin_inset Formula $k=1$
 \end_inset
 
- 
+ and 
+\begin_inset Formula $cos(x)$
+\end_inset
+
+ as a reference 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:plot-of-error"
