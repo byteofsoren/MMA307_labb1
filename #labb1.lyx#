@@ -365,7 +365,7 @@ Objective
 \end_layout
 
 \begin_layout Standard
-in this part we will investigate the formulae for numerical differentiation.
+Investigate the formulae for numerical differentiation.
 \end_layout
 
 \begin_layout Subsection
@@ -386,6 +386,13 @@ h\rightarrow0
 \end{array}\frac{f(x+h)-f(x-h)}{2*h}\label{eq:Df_cdd}
 \end{equation}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 That limit can be acquired by expanding the series 
@@ -672,19 +679,49 @@ reference "fig:plot-of-error"
 \end_inset
 
  is do to the computer in ability to calculate small numbers.
- So for the 
+ So for the error of 
 \begin_inset Formula $\frac{d}{dx}sin(x)$
 \end_inset
 
- our p value lined by doted lines in the graph have a value around 
-\begin_inset Formula $p\approx4$
+ our 
+\begin_inset Formula $p$
 \end_inset
 
-.
- Code to draw that figure.
+ is calculated by taking 2 points on the graph an solving the equation.
+ 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula 
+\[
+p=\frac{\Delta y}{\Delta x}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p\approx4
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+Code to draw the error plot 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:plot-of-error"
+
+\end_inset
+
+
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "plot_error.m"

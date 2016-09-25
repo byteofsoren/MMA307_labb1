@@ -679,11 +679,27 @@ reference "fig:plot-of-error"
 \end_inset
 
  is do to the computer in ability to calculate small numbers.
- So for the 
+ So for the error of 
 \begin_inset Formula $\frac{d}{dx}sin(x)$
 \end_inset
 
- our p value lined by doted lines in the graph have a value around:
+ our 
+\begin_inset Formula $p$
+\end_inset
+
+ is calculated by taking 2 points on the graph an solving the equation.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p=\frac{\Delta y}{\Delta x}
+\]
+
+\end_inset
+
+
 \begin_inset Formula 
 \[
 p\approx4
