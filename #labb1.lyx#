@@ -365,8 +365,11 @@ Objective
 \end_layout
 
 \begin_layout Standard
-in this part we will investigate the formulae for numerical differentiation
- 
+in this part we will investigate the formulae for numerical differentiation.
+\end_layout
+
+\begin_layout Subsection
+Details 
 \end_layout
 
 \begin_layout Standard
@@ -387,7 +390,7 @@ h\rightarrow0
 
 That limit can be acquired by expanding the series 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand vref
 reference "eq:eris_of_fx"
 
 \end_inset
@@ -402,12 +405,10 @@ reference "eq:eris_of_fx"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-f'(x)\approx\begin{array}{c}
-2k\\
-\sum\\
+f'(x)\approx\sum_{\begin{array}{c}
 i=0\\
 i\neq k
-\end{array}\left(f(x-(k-i)h)\frac{(-1)^{k+i}(k!)^{2}}{(k-i)i!(2k-i)!h}\right)\label{eq:eris_of_fx}
+\end{array}}^{2k}\left(f(x-(k-i)h)\frac{(-1)^{k+i}(k!)^{2}}{(k-i)i!(2k-i)!h}\right)\label{eq:eris_of_fx}
 \end{equation}
 
 \end_inset
@@ -435,7 +436,7 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-Proof for expansion of 
+Proof for expansion of the series 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "eq:eris_of_fx"
@@ -446,7 +447,7 @@ reference "eq:eris_of_fx"
 \begin_inset Formula $k=1$
 \end_inset
 
- is 
+ gives equation 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "eq:Df_cdd"
@@ -459,12 +460,10 @@ reference "eq:Df_cdd"
 \begin_layout Plain Layout
 \begin_inset Formula 
 \[
-f'(x)\approx\begin{array}{c}
-2k\\
-\sum\\
+f'(x)\approx\sum_{\begin{array}{c}
 i=0\\
 i\neq k
-\end{array}\left(f(x-(k-i)h)\frac{(-1)^{k+i}(k!)^{2}}{(k-i)i!(2k-i)!h}\right)=f(x-h)*\frac{-1}{2h}+f(x+h)*\frac{1}{2*h}
+\end{array}}^{2k}\left(f(x-(k-i)h)\frac{(-1)^{k+i}(k!)^{2}}{(k-i)i!(2k-i)!h}\right)=f(x-h)*\frac{-1}{2h}+f(x+h)*\frac{1}{2*h}
 \]
 
 \end_inset
@@ -623,7 +622,7 @@ centering
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-plot of the error of derivative when 
+Plot of the error of derivative when 
 \begin_inset Formula $k=1$
 \end_inset
 
